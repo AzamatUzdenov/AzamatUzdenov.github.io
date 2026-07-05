@@ -376,6 +376,21 @@
   .footnote a{color:var(--muted);text-decoration:none;}
   .footnote a:hover{color:var(--accent);}
 
+  /* ---------- minimal footer ---------- */
+  .mini-foot{border-top:1px solid var(--line);background:var(--paper-2);}
+  .mini-foot-inner{
+    display:flex;justify-content:space-between;gap:12px 26px;flex-wrap:wrap;
+    padding-top:26px;padding-bottom:26px;
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--muted);
+  }
+  .mini-foot-inner a{color:var(--accent);text-decoration:none;}
+  .mini-foot-inner a:hover{text-decoration:underline;}
+
+  /* ---------- skills full-width grid ---------- */
+  .skills-wide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 48px;}
+  .skills-wide .skill-group{margin-bottom:0;}
+  @media (max-width:640px){.skills-wide{grid-template-columns:1fr;}}
+
   /* ---------- reveal ---------- */
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.in{opacity:1;transform:none;}
@@ -414,8 +429,7 @@
         <a href="#focus">Focus</a>
         <a href="#experience">Experience</a>
         <a href="#work">Work</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <a href="#skills">Skills</a>
       </nav>
     </div>
   </header>
@@ -427,11 +441,11 @@
       <canvas id="ridge" aria-hidden="true"></canvas>
       <div class="hero-veil" aria-hidden="true"></div>
       <div class="wrap hero-inner">
-        <span class="eyebrow">Computational Biology · Genomics · ML</span>
+        <span class="eyebrow">Computational Biology</span>
         <h1 id="hero-name">Reading biology <span class="em">as data.</span></h1>
         <div class="role">Azamat Uzdenov · Computational Biology Researcher</div>
-        <p class="thesis">Where genomics meets machine learning: turning complex biological datasets into predictions.</p>
-        <p class="summary">A computational biology researcher trained at Moscow State University, with research experience across genomics, multi-omics integration, and clinical bioinformatics. Proficient in Python, applying machine learning to interpret complex biological datasets and predict outcomes across research projects.</p>
+        <p class="thesis">Turning complex biological datasets into predictions.</p>
+        <p class="summary">A computational biology researcher. Research intern at the Weizmann Institute of Science (Prof. Eran Segal's lab) and an incoming Master's student at MBZUAI. Proficient in Python, applying machine learning to interpret complex biological datasets and predict outcomes across research projects.</p>
         <div class="chips">
           <a class="chip solid" href="mailto:azam02334@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -492,10 +506,24 @@
         <div class="sec-head reveal">
           <span class="eyebrow">Where I've done it</span>
           <span class="sec-index">02 / Experience</span>
-          <h2 style="flex-basis:100%;">Research across three laboratories and clinics.</h2>
+          <h2 style="flex-basis:100%;">Research across leading labs and clinics.</h2>
         </div>
 
         <div class="roles">
+
+          <article class="role-row reveal">
+            <div class="role-meta">
+              <div class="kind">Research Intern</div>
+              <div class="org">Prof. Eran Segal's Lab</div>
+              <div class="place">Computational biology &amp; machine learning<br>Weizmann Institute of Science</div>
+            </div>
+            <div class="role-body">
+              <h3>Machine learning on large-scale biological data</h3>
+              <ul>
+                <li>Research internship in Prof. Eran Segal's group, applying <b>machine learning</b> to large-scale biological and health data.</li>
+              </ul>
+            </div>
+          </article>
 
           <article class="role-row reveal">
             <div class="role-meta">
@@ -518,7 +546,7 @@
             <div class="role-meta">
               <div class="kind">Bioinformatics &amp; Medical Data Analyst</div>
               <div class="org">Laboratory of Integrative Biology</div>
-              <div class="place">Lomonosov Moscow State University<br>Moscow, Russia</div>
+              <div class="place">Genomics &amp; multi-omics</div>
             </div>
             <div class="role-body">
               <h3>Prioritizing Cas targets across cell lines</h3>
@@ -589,8 +617,8 @@
 
           <a class="work-card" href="https://www.youtube.com/@briefly7526/videos" target="_blank" rel="noopener">
             <span class="wk">Channel · 40K subs</span>
-            <h3>Scientific infographics</h3>
-            <p>YouTube channel turning research topics into visual explainers.</p>
+            <h3>Educational infographics</h3>
+            <p>YouTube channel with clear, accessible infographics: simple but genuinely useful.</p>
             <span class="go"><span class="host">youtube.com/@briefly7526</span><span class="arw">→</span></span>
           </a>
 
@@ -605,60 +633,44 @@
       </div>
     </section>
 
-    <!-- EDUCATION + SKILLS -->
-    <section id="education">
+    <!-- SKILLS -->
+    <section id="skills">
       <div class="wrap">
         <div class="sec-head reveal">
-          <span class="eyebrow">Training &amp; toolkit</span>
-          <span class="sec-index">04 / Education &amp; skills</span>
-          <h2 style="flex-basis:100%;">Foundations and the tools I reach for.</h2>
+          <span class="eyebrow">Toolkit</span>
+          <span class="sec-index">04 / Skills</span>
+          <h2 style="flex-basis:100%;">The tools I reach for.</h2>
         </div>
 
-        <div class="split">
-          <div class="reveal">
-            <div class="panel-label mono">Education</div>
-            <div class="edu-card">
-              <p class="deg">B.Sc. in Bioengineering &amp; Bioinformatics</p>
-              <p class="inst">Lomonosov Moscow State University</p>
-              <p class="loc">Moscow, Russia · Expected August 2026</p>
-              <div class="edu-stats">
-                <div class="edu-stat"><div class="n">4.8<span style="font-size:1rem;color:var(--muted);">/5.0</span></div><div class="l">Cumulative GPA</div></div>
-                <div class="edu-stat"><div class="n">100<span style="font-size:1rem;color:var(--muted);">/100</span></div><div class="l">MSU Biology entrance</div></div>
-              </div>
+        <div class="skills-wide reveal">
+          <div class="skill-group">
+            <div class="gl">Machine learning &amp; statistical modeling</div>
+            <div class="tags">
+              <span class="tag key">PyTorch</span><span class="tag key">scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Matplotlib</span>
             </div>
           </div>
-
-          <div class="reveal">
-            <div class="panel-label mono">Technical skills</div>
-            <div class="skill-group">
-              <div class="gl">Machine learning &amp; statistical modeling</div>
-              <div class="tags">
-                <span class="tag key">PyTorch</span><span class="tag key">scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Matplotlib</span>
-              </div>
+          <div class="skill-group">
+            <div class="gl">Languages &amp; clinical data analysis</div>
+            <div class="tags">
+              <span class="tag key">Python</span><span class="tag">R</span>
             </div>
-            <div class="skill-group">
-              <div class="gl">Languages &amp; clinical data analysis</div>
-              <div class="tags">
-                <span class="tag key">Python</span><span class="tag">R</span>
-              </div>
+          </div>
+          <div class="skill-group">
+            <div class="gl">Bioinformatics tools</div>
+            <div class="tags">
+              <span class="tag">Biopython</span><span class="tag">NCBI databases</span><span class="tag">UniProt</span>
             </div>
-            <div class="skill-group">
-              <div class="gl">Bioinformatics tools</div>
-              <div class="tags">
-                <span class="tag">Biopython</span><span class="tag">NCBI databases</span><span class="tag">UniProt</span>
-              </div>
+          </div>
+          <div class="skill-group">
+            <div class="gl">Literature review &amp; evidence synthesis</div>
+            <div class="tags">
+              <span class="tag">PubMed</span><span class="tag">Clinical trials</span>
             </div>
-            <div class="skill-group">
-              <div class="gl">Literature review &amp; evidence synthesis</div>
-              <div class="tags">
-                <span class="tag">PubMed</span><span class="tag">Clinical trials</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="gl">Project management</div>
-              <div class="tags">
-                <span class="tag">Notion</span><span class="tag">GitHub</span>
-              </div>
+          </div>
+          <div class="skill-group">
+            <div class="gl">Project management</div>
+            <div class="tags">
+              <span class="tag">Notion</span><span class="tag">GitHub</span>
             </div>
           </div>
         </div>
@@ -697,7 +709,7 @@
           <div class="creator reveal">
             <span class="cl">// science communication</span>
             <h3>Educational content creator</h3>
-            <p>Translating research into scientific infographics and statistical analysis for a broad audience.</p>
+            <p>Clear, accessible infographics on YouTube and statistical analysis on Telegram, made simple but genuinely useful for a broad audience.</p>
             <div class="creator-stats">
               <div class="cstat"><div class="n">40K</div><div class="l">YouTube subscribers</div></div>
               <div class="cstat"><div class="n">7K</div><div class="l">Telegram subscribers</div></div>
@@ -709,30 +721,11 @@
 
   </main>
 
-  <!-- CTA / FOOTER -->
-  <footer class="cta" id="contact">
-    <div class="wrap cta-inner">
-      <span class="eyebrow reveal">Let's talk</span>
-      <h2 class="reveal">Open to research roles, PhD positions, and collaborations.</h2>
-      <p class="reveal">If your lab works at the edge of genomics, machine learning, or precision medicine, I'd like to hear about it. The fastest way to reach me is email.</p>
-      <div class="cta-links reveal">
-        <a class="chip solid" href="mailto:azam02334@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          azam02334@gmail.com
-        </a>
-        <a class="chip" href="tel:+79777259342">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-          +7 977 725 93 42
-        </a>
-        <a class="chip" href="https://www.linkedin.com/in/azamatuzdenov/?locale=ru_RU" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="chip" href="https://github.com/AzamatUzden/Rosalind" target="_blank" rel="noopener">GitHub</a>
-        <a class="chip" href="https://www.youtube.com/@briefly7526/videos" target="_blank" rel="noopener">YouTube</a>
-      </div>
-
-      <div class="footnote">
-        <span>Azamat Uzdenov · Computational Biology Researcher</span>
-        <span>Moscow · Available worldwide</span>
-      </div>
+  <!-- FOOTER -->
+  <footer class="mini-foot">
+    <div class="wrap mini-foot-inner">
+      <span class="mf-name">Azamat Uzdenov · Computational Biology Researcher</span>
+      <span class="mf-contact"><a href="mailto:azam02334@gmail.com">azam02334@gmail.com</a> · <a href="tel:+79777259342">+7 977 725 93 42</a></span>
     </div>
   </footer>
 
