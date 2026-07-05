@@ -21,6 +21,7 @@
     --faint:#9A9A90;
     --line:#E2E2DA;
     --line-soft:#ECECE5;
+    --rule:#C7C7BC;
     --accent:#0B6E67;
     --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
@@ -55,17 +56,26 @@
   a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
 
   /* ---------- rhythm ---------- */
-  .hero{padding-top:clamp(64px,14vh,120px);padding-bottom:clamp(40px,7vw,64px);}
-  section{padding:clamp(40px,7vw,60px) 0;border-top:1px solid var(--line-soft);}
+  .hero{padding-top:clamp(64px,14vh,120px);padding-bottom:clamp(48px,8vw,72px);}
+  section{padding:clamp(52px,8.5vw,84px) 0;border-top:1px solid var(--rule);}
 
   .label{
+    display:flex;
+    align-items:center;
+    gap:.7em;
     font-family:var(--sans);
-    font-size:.72rem;
+    font-size:.74rem;
     letter-spacing:.18em;
     text-transform:uppercase;
-    color:var(--faint);
-    margin:0 0 1.9rem;
+    color:var(--muted);
+    margin:0 0 2.1rem;
     font-weight:600;
+  }
+  .label::before{
+    content:"";
+    width:22px;height:2px;
+    background:var(--accent);
+    flex:0 0 auto;
   }
 
   /* ---------- hero ---------- */
@@ -187,7 +197,7 @@
   .activities b{color:var(--ink);font-weight:600;}
 
   /* ---------- footer ---------- */
-  footer{border-top:1px solid var(--line);padding:2rem 0 3rem;}
+  footer{border-top:1px solid var(--rule);padding:2.4rem 0 3rem;}
   .foot{
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem 1rem;
     font-size:.85rem;color:var(--muted);
